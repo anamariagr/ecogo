@@ -38,7 +38,7 @@ class _DashboardState extends State<Dashboard> {
               ReportsPage(),
               //ProfilePage(),
               RegisterPage(), 
-              LoginPage(),    
+              LoginPage(),     
               
             ],
           ),
