@@ -91,26 +91,26 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(
                           horizontal: 20.0, vertical: 20.0),
                       child: Column(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                             radius: 50,
                             backgroundImage:
                                 AssetImage('lib/core/assets/face-1.png'),
                           ),
-                          const ProfileWidgetPage(
+                          ProfileWidgetPage(
                             name: 'Thomas Deo',
                             email: 'Thomas.bates@student.gsu.edu',
                             university: 'Georgia State University',
                           ),
-                          const PointsWidgetPage(
+                          PointsWidgetPage(
                             points: 8888,
                             items: 9999,
                           ),
-                          const SizedBox(height: 30),
+                          SizedBox(height: 30),
                           MenuOptionWidget(
                             icon: Icons.star,
                             title: 'Reportes',

@@ -8,6 +8,7 @@ class ReportsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final PageController pageController = PageController();
 
+
     final List<Map<String, String>> noticias = [
       {
         'titulo': 'Nuevo plan de reciclaje en la ciudad',
@@ -63,10 +64,13 @@ class ReportsPage extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(20)),
             gradient: LinearGradient(
               colors: [
-                Color.fromARGB(179, 38, 134, 54),
-                Color.fromARGB(176, 73, 184, 119),
-                Color.fromARGB(176, 75, 192, 123),
-                Color.fromARGB(175, 64, 161, 105),
+            Color.fromARGB(192, 32, 144, 209),
+                           Color.fromARGB(192, 29, 138, 201),
+                          Color.fromARGB(228, 37, 163, 185),
+                          Color.fromARGB(174, 23, 155, 115),
+                            Color.fromARGB(137, 30, 170, 49),
+                          Color.fromARGB(132, 101, 211, 57),
+                          Color.fromARGB(113, 111, 172, 32),
               ],
               begin: Alignment.bottomLeft,
               end: Alignment.bottomRight,

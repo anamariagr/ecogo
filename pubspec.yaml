@@ -64,9 +64,12 @@ flutter:
     - lib/core/assets/face-1.png
     - lib/core/assets/face-2.png
     - lib/core/assets/face-3.png
+    - lib/core/assets/face-4.png
+    - lib/core/assets/face-5.jpg
     - lib/core/assets/face-6.jpg
+    - lib/core/assets/face-7.png
+    - lib/core/assets/face-8.png
     - lib/core/assets/logo.png
-    - lib/core/assets/face-5.jpg 
     - lib/core/assets/crown.png
     - lib/core/assets/plastic.png
     - lib/core/assets/paper.png

@@ -71,6 +71,13 @@ class LoginPage extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          const Text(
+                            '¡Hola!, gracias por hacer parte del cambio. ',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           const SizedBox(height: 10),
                           
                           // Campo Correo Electrónico
@@ -99,6 +106,13 @@ class LoginPage extends StatelessWidget {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)),
                               ),
+                            ),
+                          ),
+                          const Text(
+                            'Somos Resi-Clo, una aplicación que permite reportar y denunciar las coordenadas de los vertederos ilegales, tanto en tierra como en cuerpos de agua, para así poder gestionar la recolección de estos residuos.',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                          
@@ -146,6 +160,7 @@ class LoginPage extends StatelessWidget {
                               ),
                             ],
                           ),
+                           
                         ],
                       ),
                     ),

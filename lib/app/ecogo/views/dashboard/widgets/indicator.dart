@@ -5,6 +5,7 @@ class Indicator extends StatelessWidget {
   final Color col;
   final String value;
   final String label;
+  final String indicator;
 
   // Constructor del widget Indicator
    const Indicator({
@@ -13,6 +14,7 @@ class Indicator extends StatelessWidget {
     required this.icon,
     required this.value,
     required this.label,
+    required this.indicator,
   });
 
   @override
@@ -24,7 +26,7 @@ class Indicator extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 105,
+          height: 120,
           width: 100,
           margin: const EdgeInsets.only(left: 0),
           padding: const EdgeInsets.symmetric(
@@ -35,13 +37,15 @@ class Indicator extends StatelessWidget {
           ),
           child: Column(
             children: [
+              Text(indicator ?? '',
+                  style: const TextStyle(fontSize: 12, color: Color.fromARGB(255, 88, 88, 88))),
               Icon(icon, size: 30, color: col), // Propiedad color corregida
               const SizedBox(height: 4),
               Text(value ?? '0',
                   style: const TextStyle(
                       fontSize: 18, fontWeight: FontWeight.bold)),
               Text(label ?? '',
-                  style: const TextStyle(fontSize: 12, color: Colors.grey)),
+                  style: const TextStyle(fontSize: 12, color: Color.fromARGB(255, 51, 51, 51))),
             ],
           ),
         ),

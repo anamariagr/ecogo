@@ -4,7 +4,7 @@ class AppDrawer extends StatelessWidget {
   final PageController pageController;
 
   // Añadir PageController como parámetro del constructor
-  AppDrawer({required this.pageController, super.key});
+  const AppDrawer({required this.pageController, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +67,14 @@ class AppDrawer extends StatelessWidget {
             title: const Text('Reportes'),
             onTap: () {
               pageController.jumpToPage(4); // Navegar a la página 4
+              Navigator.pop(context); // Cerrar el Drawer
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.bolt),
+            title: const Text('Ajustes'),
+            onTap: () {
+              pageController.jumpToPage(5); // Navegar a la página 5
               Navigator.pop(context); // Cerrar el Drawer
             },
           ),

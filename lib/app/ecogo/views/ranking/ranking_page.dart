@@ -51,19 +51,26 @@ class RankingPage extends StatelessWidget {
     ];
 
     return Scaffold(
+      
       drawer: AppDrawer(pageController: pageController),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
+         
         child: Container(
+          
           decoration: const BoxDecoration(
+            
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(20)),
             gradient: LinearGradient(
               colors: [
-                Color.fromARGB(179, 38, 134, 54),
-                Color.fromARGB(176, 73, 184, 119),
-                Color.fromARGB(176, 75, 192, 123),
-                Color.fromARGB(175, 64, 161, 105),
+                Color.fromARGB(192, 32, 144, 209),
+                           Color.fromARGB(192, 29, 138, 201),
+                          Color.fromARGB(228, 37, 163, 185),
+                          Color.fromARGB(174, 23, 155, 115),
+                            Color.fromARGB(137, 30, 170, 49),
+                          Color.fromARGB(132, 101, 211, 57),
+                          Color.fromARGB(113, 111, 172, 32),
               ],
               begin: Alignment.bottomLeft,
               end: Alignment.bottomRight,
@@ -72,7 +79,8 @@ class RankingPage extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
+                
+                padding: const EdgeInsets.only(top: 40, left: 10, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

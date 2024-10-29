@@ -3,7 +3,8 @@ import 'package:ecogo/app/ecogo/views/dashboard/widgets/indicator.dart';
 import 'package:ecogo/app/ecogo/views/news/news_page.dart';
 import 'package:ecogo/app/ecogo/views/reports/reports_page.dart';
 import 'package:ecogo/app/ecogo/views/ranking/ranking_page.dart';
-import 'package:ecogo/app/ecogo/views/profile/profile_page.dart';
+//import 'package:ecogo/app/ecogo/views/profile/profile_page.dart';
+import 'package:ecogo/app/ecogo/views/setings/setings_page.dart';
 import 'package:ecogo/login/register_page.dart';
 import 'package:ecogo/login/login_page.dart'; // Importa tu página de login
 import 'package:ecogo/app/ecogo/views/dashboard/widgets/cards_materials.dart';
@@ -33,18 +34,16 @@ class _DashboardState extends State<Dashboard> {
             },
             children: const <Widget>[
               InicioPage(),
-              NewsPage(),
-              RankingPage(),
               ReportsPage(),
+              RankingPage(),
+              //NewsPage(),
+              SettingsPage(),
               //ProfilePage(),
-              RegisterPage(), 
-              LoginPage(),      
-              
+              //RegisterPage(),
+              //LoginPage(),
             ],
           ),
-
-       
-          if (_selectedIndex != 3 && _selectedIndex != 4)
+          if (_selectedIndex != 3 && _selectedIndex != 5)
             Positioned(
               bottom: 15,
               left: 0,
@@ -60,7 +59,7 @@ class _DashboardState extends State<Dashboard> {
                       'Reportar Vertedero',
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
-                    backgroundColor: const Color.fromARGB(255, 73, 172, 76),
+                    backgroundColor: const Color.fromARGB(255, 49, 157, 207),
                   ),
                 ),
               ),
@@ -68,44 +67,48 @@ class _DashboardState extends State<Dashboard> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          _pageController.jumpToPage(index);
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.green,
-        iconSize: 30,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Inicio',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book_online_sharp),
-            label: 'Noticias',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.leaderboard_outlined),
-            label: 'Ranking',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.star_half_rounded),
-            label: 'Reportes',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person), 
-            label: 'Registro',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.login), 
-            label: 'Login',
-          ),
-          
-        ],
-      ),
+  currentIndex: _selectedIndex,
+  onTap: (index) {
+    _pageController.jumpToPage(index);
+    setState(() {
+      _selectedIndex = index;
+    });
+  },
+  unselectedItemColor: Colors.grey,
+  selectedItemColor: Color.fromARGB(255, 124, 192, 68),
+  iconSize: 30,
+  items: const [
+    BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: 'Inicio',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.star_half_rounded),
+      label: 'Reportes',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.leaderboard_outlined),
+      label: 'Ranking',
+    ),
+  //  BottomNavigationBarItem(
+   //   icon: Icon(Icons.book_online_sharp),
+   //   label: 'Noticias',
+   // ),
+    BottomNavigationBarItem(
+     icon: Icon(Icons.settings),
+     label: 'Ajustes',
+    ),
+ //   BottomNavigationBarItem(
+   //   icon: Icon(Icons.person),
+    //  label: 'Registro',
+   // ),
+    //BottomNavigationBarItem(
+    //  icon: Icon(Icons.login),
+     // label: 'Login',
+   // ),
+  ],
+),
+
     );
   }
 }
@@ -121,7 +124,8 @@ class InicioPage extends StatelessWidget {
         Expanded(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+               
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
                   Container(
@@ -129,10 +133,13 @@ class InicioPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         colors: [
-                          Color.fromARGB(179, 38, 134, 54),
-                          Color.fromARGB(176, 73, 184, 119),
-                          Color.fromARGB(176, 75, 192, 123),
-                          Color.fromARGB(238, 66, 179, 104),
+                              Color.fromARGB(192, 32, 144, 209),
+                           Color.fromARGB(192, 29, 138, 201),
+                          Color.fromARGB(228, 37, 163, 185),
+                          Color.fromARGB(174, 23, 155, 115),
+                            Color.fromARGB(137, 30, 170, 49),
+                          Color.fromARGB(132, 101, 211, 57),
+                          Color.fromARGB(113, 111, 172, 32),
                         ],
                         begin: Alignment.bottomLeft,
                         end: Alignment.bottomRight,
@@ -164,7 +171,7 @@ class InicioPage extends StatelessWidget {
                           Container(
                             margin: const EdgeInsets.only(left: 0),
                             padding: const EdgeInsets.symmetric(
-                                vertical: 20.0, horizontal: 70.0),
+                                vertical: 20.0, horizontal: 60.0),
                             decoration: BoxDecoration(
                               color: const Color.fromARGB(240, 195, 253, 208),
                               borderRadius: BorderRadius.circular(30.0),
@@ -180,26 +187,38 @@ class InicioPage extends StatelessWidget {
                           ),
                         ]),
                         const SizedBox(height: 20),
+                        const Text(
+                          'Hemos logrado',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 22,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Indicator(
-                              icon: Icons.recycling,
+                              indicator:'Reportes',
+                              icon: Icons.energy_savings_leaf_rounded,
                               col: Colors.blue,
-                              value: '3.5 kg',
-                              label: 'Reciclado',
+                              value: '500',
+                              label: 'Vertederos',
                             ),
                             Indicator(
+                              indicator:'Recoleccion',
                               icon: Icons.cloud_done_sharp,
                               col: Color.fromARGB(255, 175, 31, 211),
                               value: '5.2 kg',
-                              label: 'Carbono',
+                              label: 'Residuos',
                             ),
                             Indicator(
-                              icon: Icons.energy_savings_leaf_rounded,
+                              indicator:'Reciclaje',
                               col: Colors.green,
-                              value: '5287',
-                              label: 'Puntos',
+                              icon: Icons.recycling,
+                              value: '2000kg',
+                              label: 'Residuos',
                             ),
                           ],
                         ),
@@ -234,30 +253,43 @@ class InicioPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  GridView.count(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 6,
-                    mainAxisSpacing: 10,
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.only(top: 10),
-                    physics: const NeverScrollableScrollPhysics(),
-                    children: const [
-                      CardsMaterials(
-                        imageUrl: 'lib/core/assets/plastic.png',
-                        textOnImage: 'Plásticos',
-                        title: '',
-                      ),
-                      CardsMaterials(
-                        imageUrl: 'lib/core/assets/glass.png',
-                        title: '',
-                        textOnImage: 'Vidrios',
-                      ),
-                      CardsMaterials(
-                        imageUrl: 'lib/core/assets/paper.png',
-                        title: '',
-                        textOnImage: 'Papel',
-                      ),
-                    ],
+                  SizedBox(
+                    height:
+                        150, // Establece una altura específica para el GridView
+                    child: GridView.count(
+                      scrollDirection: Axis
+                          .horizontal, // Habilita el desplazamiento horizontal
+                      crossAxisCount:
+                          1, // Una sola fila para organizar horizontalmente
+                      crossAxisSpacing: 6,
+                      mainAxisSpacing: 10,
+                      shrinkWrap: true,
+                      padding: const EdgeInsets.only(top: 10),
+                      physics:
+                          const ScrollPhysics(), // Habilita el desplazamiento
+                      children: const [
+                        CardsMaterials(
+                          imageUrl: 'lib/core/assets/plastic.png',
+                          textOnImage: 'Plásticos',
+                          title: '',
+                        ),
+                        CardsMaterials(
+                          imageUrl: 'lib/core/assets/paper.png',
+                          title: '',
+                          textOnImage: 'Cartón y Papel',
+                        ),
+                        CardsMaterials(
+                          imageUrl: 'lib/core/assets/glass.png',
+                          title: '',
+                          textOnImage: 'Eléctricos',
+                        ),
+                        CardsMaterials(
+                          imageUrl: 'lib/core/assets/paper.png',
+                          title: '',
+                          textOnImage: 'Chatarra',
+                        ),
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0, top: 8),
@@ -297,6 +329,7 @@ class InicioPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
+                   const SizedBox(height: 80),
                 ],
               ),
             ),
