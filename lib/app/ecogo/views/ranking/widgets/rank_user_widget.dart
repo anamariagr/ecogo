@@ -1,15 +1,18 @@
+import 'package:ecogo/core/models/ranking.dart';
 import 'package:flutter/material.dart';
 
 class RankUserWidget extends StatelessWidget {
-  final Map<String, dynamic> user;
+  final RankingUser user; // Use RankingUser model instead of Map
   final double avatarSize;
   final Color borderColor;
+  final int position;
 
   const RankUserWidget({
     Key? key,
     required this.user,
     required this.avatarSize,
     required this.borderColor,
+    required this.position
   }) : super(key: key);
 
   @override
@@ -22,7 +25,10 @@ class RankUserWidget extends StatelessWidget {
             border: Border.all(color: borderColor, width: 5),
           ),
           child: CircleAvatar(
-            backgroundImage: AssetImage(user['image']),
+            backgroundImage: user.profilePhoto != null && user.profilePhoto!.startsWith('http')
+                ? NetworkImage(user.profilePhoto!)
+                : AssetImage(user.profilePhoto ?? 'lib/core/assets/default-avatar.png')
+            as ImageProvider,
             radius: avatarSize,
           ),
         ),
@@ -36,7 +42,7 @@ class RankUserWidget extends StatelessWidget {
               color: borderColor.withOpacity(0.2),
             ),
             child: Text(
-              user['position'].toString(),
+              "${this.position}",
               style: const TextStyle(
                 color: Color.fromARGB(255, 85, 85, 85),
                 fontWeight: FontWeight.bold,
@@ -46,7 +52,7 @@ class RankUserWidget extends StatelessWidget {
         ),
         const SizedBox(height: 5),
         Text(
-          user['name'],
+          user.name,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
       ],

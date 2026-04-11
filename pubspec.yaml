@@ -35,6 +35,21 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_sliding_up_panel: ^2.1.1
+  nagorik_google_login: ^1.0.1
+  sliding_up_panel: ^2.0.0+1
+  google_sign_in: ^6.2.1
+  get: ^4.6.6
+  flutter_svg: ^2.0.10+1
+  permission_handler: ^11.3.1
+  geolocator: ^13.0.1
+  image_picker: ^1.1.2
+  http: ^1.2.2
+  get_storage: ^2.1.1
+  loading_overlay: ^0.4.2
+  shimmer: ^3.0.0
+  flutter_html: ^3.0.0-beta.2
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +89,7 @@ flutter:
     - lib/core/assets/plastic.png
     - lib/core/assets/paper.png
     - lib/core/assets/glass.png
+    - lib/core/assets/google.png
     - lib/core/assets/map.png
     - lib/core/assets/vertedero-img.png
     - lib/core/assets/vertedero-2.png
